@@ -1,7 +1,7 @@
 [build]
   base = "Landing/"
   command = "npm install && npx ng build --configuration production"
-  publish = "Landing/dist/aivent/browser"
+  publish = "dist/aivent/browser"
 
 [[redirects]]
   from = "/*"
