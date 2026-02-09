@@ -1,0 +1,77 @@
+/* Hero section with video background */
+#section-hero {
+  position: relative;
+  min-height: 800px;
+  overflow: hidden;
+}
+
+/* Video background styles */
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.8;
+  transform: scale(1.1);
+  will-change: transform;
+  background: #000;
+}
+
+/* Ensure proper layering */
+#section-hero .gradient-edge-top,
+#section-hero .gradient-edge-bottom,
+#section-hero .sw-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+#section-hero .abs {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide video controls */
+.hero-video-bg::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero-video-bg::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.hero-video-bg::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.hero-video-bg::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+/* Responsive video background */
+@media (max-width: 768px) {
+  .hero-video-bg {
+    height: 100vh;
+    min-height: 600px;
+  }
+}
+
+/* Fallback background gradient */
+#section-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: -3;
+}
+
+/* Ensure video is visible */
+.hero-video-bg {
+  display: block !important;
+  visibility: visible !important;
+}

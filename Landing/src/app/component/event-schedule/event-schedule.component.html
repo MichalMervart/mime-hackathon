@@ -1,0 +1,59 @@
+<section id="section-schedule" class="bg-dark section-dark text-light">
+    <div class="container">
+        <div class="row g-4 gx-5 justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="subtitle s2 mb-3 fadeInUp" data-aos="fade-up" data-aos-delay="0">
+                    Program akce
+                </div>
+                <h2 class="fadeInUp" data-aos="fade-up" data-aos-delay="200">
+                    3 dny intenzivní práce
+                </h2>
+            </div>
+        </div>
+
+        <div class="row g-4 gx-5 justify-content-center fadeInUp">
+            <div class="col-lg-12">
+                <div class="de-tab plain">
+
+                    <!-- Tabs Navigation -->
+                    <ul class="d-tab-nav mb-4 pb-4 d-flex justify-content-between">
+                        <li *ngFor="let day of schedule; let i = index"
+                            [class.active-tab]="i === activeDay"
+                            (click)="selectDay(i)"
+                            style="cursor: pointer;">
+                            <h3>{{ day.day }}</h3>
+                            {{ day.date }}
+                        </li>
+                    </ul>
+
+                    <!-- Tab Content -->
+                    <ul class="pt-3 fadeInUp">
+                        <li *ngFor="let day of schedule; let i = index" [hidden]="i !== activeDay">
+                            <div *ngFor="let s of day.sessions" class="border-white-bottom-op-2 pb-5 mb-5">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-md-2">
+                                        {{ s.time }}
+                                    </div>
+                                    <div class="col-md-4" *ngIf="s.name">
+                                        <div class="d-flex align-items-center">
+                                            <img [src]="s.img" class="w-100px rounded-1 me-4" alt="" *ngIf="s.img">
+                                            <div>
+                                                <h5 class="mb-0">{{ s.name }}</h5>
+                                                <span *ngIf="s.role">{{ s.role }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3>{{ s.title }}</h3>
+                                        <p class="fs-15 mb-0">{{ s.desc }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

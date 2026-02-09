@@ -1,0 +1,80 @@
+<header [ngClass]="headerClass" [class.header-mobile]="isMobileMenuOpen">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="de-flex">
+                    <div class="de-flex-col">
+                        <!-- logo begin -->
+                        <div id="logo">
+                            <a routerLink="/">
+                                <img class="logo-main" src="assets/images/img/mime-logo.svg" alt="MIME Digital">
+                                <img class="logo-scroll" src="assets/images/img/mime-logo.svg" alt="MIME Digital">
+                                <img class="logo-mobile" src="assets/images/img/mime-logo.svg" alt="MIME Digital">
+                            </a>
+                        </div>
+                        <!-- logo close -->
+                    </div>
+
+                    <div class="de-flex-col">
+                        <div class="de-flex-col header-col-mid">
+                            <ul id="mainmenu" [class.mobile-open]="isMobileMenuOpen">
+                                <li>
+                                    <a class="menu-item" [class.active]="activeSection === 'section-hero'"
+                                        (click)="scrollToSection('section-hero')" href="javascript:void(0)">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="menu-item" [class.active]="activeSection === 'section-about'"
+                                        (click)="scrollToSection('section-about')" href="javascript:void(0)">
+                                        O akci
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="menu-item" [class.active]="activeSection === 'section-why-attend'"
+                                        (click)="scrollToSection('section-why-attend')" href="javascript:void(0)">
+                                        Proč se zúčastnit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="menu-item" [class.active]="activeSection === 'section-speakers'"
+                                        (click)="scrollToSection('section-speakers')" href="javascript:void(0)">
+                                        Řečníci
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="menu-item" [class.active]="activeSection === 'section-schedule'"
+                                        (click)="scrollToSection('section-schedule')" href="javascript:void(0)">
+                                        Program
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="menu-item" [class.active]="activeSection === 'section-venue'"
+                                        (click)="scrollToSection('section-venue')" href="javascript:void(0)">
+                                        Místo konání
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="menu-item" [class.active]="activeSection === 'section-faq'"
+                                        (click)="scrollToSection('section-faq')" href="javascript:void(0)">
+                                        FAQ
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="de-flex-col">
+                        <div class="menu_side_area">
+                            <span id="menu-btn" [class.menu-open]="isMobileMenuOpen" (click)="toggleMobileMenu()"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu-overlay" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>

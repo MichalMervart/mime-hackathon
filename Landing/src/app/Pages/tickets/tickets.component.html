@@ -1,0 +1,105 @@
+<div id="wrapper">
+
+    <app-navbar></app-navbar>
+
+    <section id="section-hero" class="section-dark no-top no-bottom text-light jarallax relative mh-500 jarallax">
+        <img src="assets/images/background/7.webp" class="jarallax-img" alt="">
+        <div class="gradient-edge-bottom h-50"></div>
+        <div class="sw-overlay op-5"></div>
+        <div class="abs w-80 bottom-10 z-2 w-100">
+            <div class="container">
+                <div class="row align-items-center justify-content-between gx-5">
+                    <div class="col-lg-6">
+                        <div class="relative fadeInUp mask-right">
+                            <div class="text-start">
+                                <h1 class="fs-96 text-uppercase fs-sm-10vw mb-0 lh-1">Tickets</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 fadeInUp fadeInRight" data-aos="fade-up" data-aos-delay="600">
+                        <p class="mb-0">Join thought leaders, developers, researchers, and founders as we explore how
+                            artificial intelligence is reshaping industries, creativity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-tickets" class="bg-dark section-dark text-light pt-80 relative" aria-label="section">
+        <div class="container relative z-2">
+            <div class="row gy-4 gx-5 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <div class="col-md-6" *ngFor="let ticket of tickets">
+                            <div class="relative overflow-hidden h-100 border-white-op-3 rounded-1 bg-blur">
+                                <div class="gradient-edge-bottom color op-5"></div>
+                                <div class="p-40 pb-80 z-2">
+                                    <div class="text-center">
+                                        <h2 class="fs-40 mb-0">{{ ticket.name }}</h2>
+                                        <h3 class="id-color mb-4">${{ ticket.price }}</h3>
+                                        <h4>Benefits:</h4>
+                                    </div>
+
+                                    <div class="border-white-bottom-op-2 mb-4"></div>
+
+                                    <ul class="ul-check mb-4">
+                                        <li *ngFor="let benefit of ticket.benefits">{{ benefit }}</li>
+                                    </ul>
+                                </div>
+
+                                <div class="abs abs-center p-40 pb-30 bottom-0 z-2 w-100 text-center">
+                                    <div class="de-number">
+                                        <span class="d-minus" (click)="decrease(ticket)">-</span>
+                                        <input type="text" class="no-border no-bg" [value]="ticket.quantity" readonly>
+                                        <span class="d-plus" (click)="increase(ticket)">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+                    <h3>Carts</h3>
+
+                    <div *ngFor="let item of cartItems; let i = index"
+                        class="d-flex align-items-center border-bottom py-3">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0">
+                                {{ item.name }} <span class="id-color">(x{{ item.quantity }})</span>
+                            </h5>
+                            <span class="me-4 op-8">${{ item.price }}</span>
+                            <span class="op-5">{{ item.available }} available</span>
+                        </div>
+                        <div class="text-end">
+                            <p class="fw-bold text-light mb-0">
+                                ${{ item.price * item.quantity }}
+                            </p>
+                            <button class="btn btn-link p-0 text-light op-5" (click)="deleteItem(i)">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center py-3">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Total</h3>
+                        </div>
+                        <div class="text-end">
+                            <h3>${{ total }}</h3>
+                        </div>
+                    </div>
+
+                    <a class="btn-main fx-slide w-100" href="#">
+                        <span>Buy Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<app-footer></app-footer>

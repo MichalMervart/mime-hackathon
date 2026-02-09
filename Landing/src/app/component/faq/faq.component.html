@@ -1,0 +1,32 @@
+<section id="section-faq" class="bg-dark section-dark text-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="subtitle fadeInUp" data-aos="fade-up" data-aos-delay="0">Vše co potřebujete vědět</div>
+                <h2 class="fadeInUp" data-aos="fade-up" data-aos-delay="200">Často kladené otázky</h2>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="accordion s2 fadeInUp">
+                    <div class="accordion-section" *ngFor="let item of accordionItems; let i = index">
+
+                        <!-- Accordion Title -->
+                        <div class="accordion-section-title" (click)="toggleAccordion(i)"
+                            [class.active]="activeIndex === i" [attr.data-tab]="'#accordion-' + (i + 1)">
+                            {{ item.title }}
+                        </div>
+
+                        <!-- Accordion Content -->
+                        <div class="accordion-section-content" [id]="'accordion-' + (i + 1)"
+                            [ngClass]="{ 'open': activeIndex === i }"
+                            [style.display]="activeIndex === i ? 'block' : 'none'">
+                            {{ item.content }}
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

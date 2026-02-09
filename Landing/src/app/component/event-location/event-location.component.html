@@ -1,0 +1,38 @@
+<section id="section-venue" class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+    <div class="container relative z-2">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="subtitle fadeInUp" data-aos="fade-up" data-aos-delay="0">Místo konání</div>
+                <h2 class="fadeInUp" data-aos="fade-up" data-aos-delay="200">Vše co potřebujete vědět</h2>
+                <p class="lead fadeInUp" data-aos="fade-up" data-aos-delay="600">
+                    Připojte se k nám v moderních prostorách v centru Brna s veškerým zázemím pro úspěšný hackathon.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-sm-6">
+                <img src="assets/images/img/nosreti.png" class="w-100 rounded-1 fadeInUp scale-in-mask" alt="Náměstí">
+            </div>
+
+            <div class="col-sm-6">
+                <img src="assets/images/img/kancelar.png" class="w-100 rounded-1 fadeInUp scale-in-mask" alt="Kancelář">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- Loop Starts Here -->
+            <div class="col-lg-4 col-md-6 mb-sm-30" *ngFor="let item of venueDetails">
+                <div class="d-flex justify-content-center fadeInUp" data-aos="fade-up"
+                    [attr.data-aos-delay]="item.delay">
+                    <i class="fs-60 id-color" [ngClass]="item.icon"></i>
+                    <div class="ms-3">
+                        <h4 class="mb-0">{{ item.title }}</h4>
+                        <p>{{ item.info }}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Loop Ends Here -->
+        </div>
+    </div>
+</section>

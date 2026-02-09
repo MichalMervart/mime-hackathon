@@ -1,0 +1,169 @@
+<div id="wrapper">
+
+    <!-- header begin -->
+    <header class="transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="de-flex">
+                        <div class="de-flex-col">
+                            <!-- logo begin -->
+                            <div id="logo">
+                                <a routerLink="/">
+                                    <img class="logo-main" src="assets/images/logo.webp" alt="">
+                                    <img class="logo-scroll" src="assets/images/logo.webp" alt="">
+                                    <img class="logo-mobile" src="assets/images/logo.webp" alt="">
+                                </a>
+                            </div>
+                            <!-- logo close -->
+                        </div>
+
+                        <div class="de-flex-col">
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li *ngFor="let item of menuItems">
+                                        <a class="menu-item" [ngClass]="{ 'active': item.active }" [href]="item.link">
+                                            {{ item.label }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="de-flex-col">
+                            <a class="btn-main fx-slide w-100" routerLink="/tickets-2"><span>Buy Tickets</span></a>
+
+                            <div class="menu_side_area">
+                                <span id="menu-btn"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header close -->
+    <!-- content begin -->
+    <div class="no-bottom no-top" id="content">
+        <div id="top"></div>
+
+        <!--<div class="de_ribbon d-ribbon fadeInUp fadeInDown animated" data-wow-delay="1.5s">SAVE 50%</div>-->
+
+        <section id="section-hero" class="section-dark text-light bg-dark-1 jarallax pb-0 overflow-hidden"
+            aria-label="section">
+            <img src="demo/bg.webp" class="jarallax-img" alt="">
+            <div class="sw-overlay op-9"></div>
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom color h-50"></div>
+
+            <div class="sm-hide w-200 absolute start-10 top-20 text-center z-3 fadeInUp scaleIn" data-aos="fade-up"
+                data-aos-delay="1200">
+                <img src="demo/elite-author.png" class="w-60px mb-3" alt="">
+                <h5>Envato Elite Author</h5>
+            </div>
+
+            <div class="sm-hide w-200 absolute end-10 top-20 text-center z-3 fadeInUp scaleIn" data-aos="fade-up"
+                data-aos-delay="1200">
+                <img src="demo/featured-author.png" class="w-60px mb-3" alt="">
+                <h5>Featured Author</h5>
+            </div>
+
+            <div class="container relative z-2">
+                <div class="row g-4 gx-5 justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="py-4">
+                            <div class="subtitle s2 mb-3 fadeInUp fadeInUp">Introducing AIvent</div>
+                            <h1 class="fs-72 lh-1 text-uppercase fadeInUp fadeInUp">AI Event Website Template</h1>
+                            <p class="fadeInUp fadeInUp">AIvent combines top-tier coding and design standards to help
+                                you
+                                build a professional-looking website quickly and effortlessly.</p>
+                            <a class="btn-main fx-slide fadeInUp fadeInUp" href="#section-preview"><span>View
+                                    Demo</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacer-double"></div>
+
+            <div class="ss-wrap text-center z-4">
+                <img src="demo/preview/homepage-1.webp" class="img-c1 relative fadeInUp fadeInUp" data-aos="fade-up"
+                    data-aos-delay="600" alt="">
+                <img src="demo/preview/homepage-2.webp" class="abs img-l1 fadeInUp fadeInUp" data-aos="fade-up"
+                    data-aos-delay="900" alt="">
+                <img src="demo/preview/homepage-3.webp" class="abs img-l2 fadeInUp fadeInUp" data-aos="fade-up"
+                    data-aos-delay="1200" alt="">
+                <img src="demo/preview/homepage-4.webp" class="abs img-r1 fadeInUp fadeInUp" data-aos="fade-up"
+                    data-aos-delay="900" alt="">
+                <img src="demo/preview/homepage-5.webp" class="abs img-r2 fadeInUp fadeInUp" data-aos="fade-up"
+                    data-aos-delay="1200" alt="">
+            </div>
+        </section>
+
+        <section id="section-features" class="relative">
+            <div class="gradient-edge-top op-2"></div>
+            <div class="container relative z-2">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="subtitle fadeInUp fadeInUp mb-3">Why Choose AIvent</div>
+                        <h2 class="fadeInUp fadeInUp" data-aos="fade-up" data-aos-delay="200">AIvent Features</h2>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 fadeInUp fadeInRight" *ngFor="let feature of features">
+                        <div class="bg-dark-2 p-40 h-100 rounded-10">
+                            <img [src]="feature.img" class="w-100px mb-3 fadeInUp zoomIn" alt="">
+                            <h4>{{ feature.title }}</h4>
+                            <p>{{ feature.desc }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-demo" class="overlay-dark-1">
+            <div class="container relative z-2">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 text-center fadeInUp fadeInUp">
+                        <div class="subtitle fadeInUp fadeInUp mb-3">All Demos Included</div>
+                        <h2 class="fadeInUp fadeInUp mb20" data-aos="fade-up" data-aos-delay="200">Demo Preview</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4 sequence justify-content-center">
+                    <div class="col-md-6 gallery-item text-center mb20" *ngFor="let demo of demoPreviews">
+                        <a class="d_demo_img fadeInUp" target="_blank" [href]="demo.link">
+                            <span class="d-overlay"><span>Live Preview</span></span>
+                            <img [src]="demo.img" class="color w-100" alt="">
+                        </a>
+                        <h5 class="s2">{{ demo.title }}</h5>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="text-light bg-dark-1 section-dark jarallax" aria-label="section">
+            <img src="demo/bg-2.webp" class="jarallax-img" alt="">
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-9"></div>
+            <div class="container relative z-1000">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="subtitle fadeInUp fadeInUp" data-aos="fade-up" data-aos-delay="0">Start Your Website
+                        </div>
+                        <h1 class="fadeInUp fadeInUp" data-aos="fade-up" data-aos-delay="200">Build a stunning website
+                            in no time!</h1>
+
+                        <a class="btn-main fx-slide fadeInUp fadeInUp" data-aos="fade-up" data-aos-delay="600"
+                            target="_blank" href="#"><span>Buy Now</span></a>
+
+                        <div class="spacer-single"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- content close -->
+
+</div>

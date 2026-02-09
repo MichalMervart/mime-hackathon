@@ -1,0 +1,47 @@
+<section id="section-tickets" class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+    <img src="assets/images/background/7.webp" class="jarallax-img" alt="">
+    <div class="gradient-edge-top"></div>
+    <div class="gradient-edge-bottom"></div>
+    <div class="sw-overlay op-7"></div>
+
+    <div class="container relative z-2">
+        <div class="row g-4 gx-5 justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="subtitle s2 mb-3 fadeInUp" data-aos="fade-up" data-aos-delay="0">Ticket Options</div>
+                <h2 class="fadeInUp" data-aos="fade-up" data-aos-delay="200">Choose Your Pass</h2>
+                <p class="lead fadeInUp" data-aos="fade-up" data-aos-delay="400">Select the perfect ticket for your
+                    needs and gain
+                    access to exclusive sessions, workshops, and more.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-12 swiper-container" #Carousel>
+                <div class="swiper-wrapper fadeInUp mask-right">
+                    <div class="swiper-slide item" *ngFor="let ticket of tickets">
+                        <div class="d-ticket {{ticket.style}}">
+                            <img src="assets/images/logo.webp" class="w-80px mb-4" alt="">
+                            <img src="assets/images/misc/barcode.webp" class="w-20 p-2 abs abs-middle end-0 me-2"
+                                alt="">
+                            <img src="assets/images/logo-big-white.webp" class="w-40 abs abs-centered me-4 op-2" alt="">
+                            <h2>{{ ticket.name }}</h2>
+                            <h4 class="mb-4">{{ ticket.price }}</h4>
+                            <div class="fs-14">{{ ticket.date }}</div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="py-4 z-2">
+                                <ul class="ul-check mb-4">
+                                    <li *ngFor="let benefit of ticket.benefits">{{ benefit }}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a class="btn-main fx-slide w-100" routerLink="/tickets"><span>Buy Ticket</span></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+<section id="section-why-attend" class="bg-dark section-dark text-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6 offset-lg-3 text-center">
+                <div class="subtitle fadeInUp mb-3">Proč se zúčastnit</div>
+                <h2 class="fadeInUp" data-aos="fade-up" data-aos-delay="200">Co získáte</h2>
+                <p class="lead mb-0 fadeInUp">
+                    Zažijte intenzivní víkend plný tvorby, učení a networking s lidmi, kteří chtějí měnit svět e-mailové komunikace.
+                </p>
+            </div>
+        </div>
+
+        <div class="spacer-single"></div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let item of whyAttendList">
+                <div class="feature-card fadeInUp" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i [class]="item.icon"></i>
+                    </div>
+                    <h4 class="mb-3">{{ item.title }}</h4>
+                    <p class="mb-0">{{ item.desc }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

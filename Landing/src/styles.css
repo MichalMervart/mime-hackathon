@@ -1,0 +1,255 @@
+/* You can add global styles to this file, and also import other style files */
+
+#mainmenu>li.has-child:after{
+    font-family: "FontAwesome";
+    content: "\f078";
+    padding-left: 5px;
+    font-size: 8px;
+    position: relative;
+    top: -2px;
+    color: rgba(255, 255, 255, .75);
+}
+
+/* === Accent color #97FB05 overrides === */
+
+/* Subtitle brackets [ ] */
+.subtitle:before,
+.subtitle:after {
+    color: var(--accent-color) !important;
+}
+
+/* Check marks in lists */
+.ul-check li:before {
+    color: var(--accent-color) !important;
+}
+
+/* Countdown labels */
+.countdown-label {
+    color: var(--accent-color) !important;
+}
+
+/* Disable fx-slide text disappearing */
+a.btn-main.fx-slide:hover span {
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+a.btn-main.fx-slide:hover:before {
+    display: none !important;
+}
+
+/* CTA buttons - accent color */
+a.btn-main,
+a.btn-main:active,
+a.btn-main:focus,
+a.btn-main:visited,
+.btn-main,
+input[type=button].btn-main {
+    background: var(--accent-color) !important;
+    color: #111 !important;
+    border: 2px solid var(--accent-color) !important;
+    transition: all 0.3s ease;
+}
+
+a.btn-main:hover,
+.btn-main:hover {
+    background: transparent !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 25px rgba(var(--accent-color-rgb), 0.35);
+}
+
+/* btn-line border accent */
+a.btn-main.btn-line,
+.btn-main.btn-line {
+    background: transparent !important;
+    border: 2px solid var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+
+a.btn-main.btn-line:hover,
+.btn-main.btn-line:hover {
+    background: var(--accent-color) !important;
+    color: #111 !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 25px rgba(var(--accent-color-rgb), 0.35);
+}
+
+/* Icon color accents - calendar & location in hero */
+.id-color {
+    color: var(--accent-color) !important;
+}
+
+/* Scroll indicator */
+.scroll-down-indicator {
+    color: var(--accent-color) !important;
+}
+
+.scroll-down-indicator:hover {
+    color: #fff !important;
+}
+
+/* Active menu item */
+#mainmenu li a.active:before {
+    background: var(--accent-color) !important;
+}
+
+#mainmenu li a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* ========================================
+   RESPONSIVE / MOBILE FIXES
+   ======================================== */
+
+/* --- Mobile: max 992px --- */
+@media (max-width: 992px) {
+    /* Hero section */
+    #section-hero {
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+    }
+
+    #section-hero .abs-centered {
+        width: 95% !important;
+    }
+
+    #section-hero h1 {
+        font-size: 10vw !important;
+    }
+
+    #section-hero .subtitle {
+        font-size: 13px;
+        padding: 2px 5px;
+    }
+
+    /* Hero CTA buttons stack on mobile */
+    #section-hero .d-block.d-md-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #section-hero .btn-hero-large {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin: 0.4rem auto !important;
+    }
+
+    /* Spacer reduce on mobile */
+    .spacer-single {
+        height: 20px !important;
+    }
+
+    .spacer-double {
+        height: 30px !important;
+    }
+
+    /* About section padding fix */
+    #section-about .py-5.my-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Speakers - wider container for long title */
+    #section-speakers .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #section-speakers h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Schedule tabs - wrap and scroll on mobile */
+    .d-tab-nav {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.5rem;
+        padding-bottom: 1rem !important;
+    }
+
+    .d-tab-nav li {
+        flex: 0 0 auto;
+        min-width: 120px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .d-tab-nav li h3 {
+        font-size: 1rem;
+    }
+
+    /* Schedule content stack */
+    #section-schedule .border-white-bottom-op-2 .row {
+        flex-direction: column;
+    }
+
+    /* Event location images */
+    #section-venue .col-sm-6 {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Marquee text size */
+    .de-marquee-list-2 .fs-60 {
+        font-size: 2rem !important;
+    }
+
+    /* Section padding reduce */
+    section {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+
+    section.p-0 {
+        padding: 0 !important;
+    }
+
+    section.no-top {
+        padding-top: 0 !important;
+    }
+
+    section.no-bottom {
+        padding-bottom: 0 !important;
+    }
+}
+
+/* --- Small mobile: max 480px --- */
+@media (max-width: 480px) {
+    #section-hero h1 {
+        font-size: 12vw !important;
+    }
+
+    #section-hero .subtitle {
+        font-size: 11px;
+    }
+
+    #section-hero h4 {
+        font-size: 0.9rem;
+    }
+
+    /* Feature cards single column */
+    #section-why-attend .col-lg-4.col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* FAQ title */
+    #section-faq h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Organizer section */
+    #section-organizer .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Footer social icons */
+    footer .social-icons a {
+        margin: 0 8px;
+    }
+}

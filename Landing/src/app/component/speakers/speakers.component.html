@@ -1,0 +1,31 @@
+<section id="section-speakers" class="bg-dark section-dark text-light">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-6 relative z-3">
+                <div class="text-center">
+                    <div class="subtitle fadeInUp" data-aos="fade-up" data-aos-delay="0">Řečníci</div>
+                    <h2 class="fadeInUp" data-aos="fade-up" data-aos-delay="200">Lidé, kteří ti pomůžou najít ty správné cesty</h2>
+                    <p class="lead fadeInUp">
+                        Poznejte odborníky a mentory, kteří vás budou provázet hackathonováckým víkendem a podělí se o své zkušenosti.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4" *ngFor="let speaker of speakers">
+                <div class="hover relative rounded-1 overflow-hidden fadeIn scale-in-mask">
+                    <img [src]="speaker.image" class="w-100 hover-scale-1-1" alt="{{speaker.name}}">
+                    <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                    <div class="abs w-100 start-0 bottom-0 z-3">
+                        <div class="bg-blur p-4 m-4 rounded-1 text-light text-center relative z-2">
+                            <h3 class="mb-0">{{speaker.name}}</h3>
+                            <span>{{speaker.title}}</span>
+                        </div>
+                        <div class="gradient-edge-bottom h-100 op-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

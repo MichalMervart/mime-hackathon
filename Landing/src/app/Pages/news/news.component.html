@@ -1,0 +1,77 @@
+<div id="wrapper">
+    <app-navbar></app-navbar>
+
+    <section id="section-hero" class="section-dark no-top no-bottom text-light jarallax relative mh-500 jarallax">
+        <img src="assets/images/background/3.webp" class="jarallax-img" alt="">
+        <div class="gradient-edge-bottom h-50"></div>
+        <div class="sw-overlay op-5"></div>
+        <div class="abs w-80 bottom-10 z-2 w-100">
+            <div class="container">
+                <div class="row align-items-center justify-content-between gx-5">
+                    <div class="col-lg-6">
+                        <div class="relative fadeInUp mask-right">
+                            <div class="text-start">
+                                <h1 class="fs-96 text-uppercase fs-sm-10vw mb-0 lh-1">News</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 fadeInUp fadeInRight" data-aos="fade-up" data-aos-delay="300">
+                        <p class="mb-0">Join thought leaders, developers, researchers, and founders as we explore how
+                            artificial intelligence is reshaping industries, creativity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4" *ngFor="let news of newsItems">
+                    <a routerLink="/news-single" class="d-block hover relative rounded-20 overflow-hidden text-light">
+                        <div class="abs z-2 bg-color rounded-2 text-white p-3 pb-2 m-4 text-center fw-600">
+                            <h4 class="fs-36 mb-0 lh-1">{{ news.day }}</h4>
+                            <span>{{ news.month }}</span>
+                        </div>
+
+                        <img [src]="news.img" class="w-100 hover-scale-1-1" alt="">
+
+                        <div class="absolute start-0 bottom-0 p-4 z-2">
+                            <h4>{{ news.title }}</h4>
+                        </div>
+
+                        <div class="gradient-edge-bottom h-70"></div>
+                    </a>
+                </div>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+                        </a>
+                    </li>
+
+                    <li class="page-item" *ngFor="let page of pagination.pages"
+                        [class.active]="page === pagination.current"
+                        [attr.aria-current]="page === pagination.current ? 'page' : null">
+                        <a class="page-link" href="#">{{ page }}</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- footer begin -->
+<app-footer></app-footer>
+<!-- footer end -->
