@@ -70,15 +70,54 @@
 @media (max-width: 768px) {
     .goal-card {
         padding: 1.25rem;
+        gap: 1rem;
     }
 
     .goal-icon {
-        width: 48px;
-        height: 48px;
-        min-width: 48px;
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        border-radius: 10px;
     }
 
     .goal-icon i {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
+    }
+
+    .goal-card h4 {
+        font-size: 1rem;
+    }
+
+    .goal-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .organizer-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .organizer-content .lead {
+        font-size: 1rem;
+    }
+
+    .organizer-goals {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .goal-card {
+        padding: 1rem;
+    }
+
+    .goal-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+    .goal-icon i {
+        font-size: 1rem;
     }
 }

@@ -51,15 +51,40 @@
 
 @media (max-width: 768px) {
     .feature-card {
-        padding: 2rem 1.5rem;
+        padding: 1.75rem 1.25rem;
     }
 
     .feature-icon {
-        width: 70px;
-        height: 70px;
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
     }
 
     .feature-icon i {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .feature-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .feature-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1rem;
+    }
+
+    .feature-icon i {
+        font-size: 1.5rem;
     }
 }

@@ -30,20 +30,20 @@
                     <ul class="pt-3 fadeInUp">
                         <li *ngFor="let day of schedule; let i = index" [hidden]="i !== activeDay">
                             <div *ngFor="let s of day.sessions" class="border-white-bottom-op-2 pb-5 mb-5">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-md-2">
-                                        {{ s.time }}
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-md-2 col-sm-12">
+                                        <span class="schedule-time">{{ s.time }}</span>
                                     </div>
-                                    <div class="col-md-4" *ngIf="s.name">
+                                    <div class="col-md-4 col-sm-12" *ngIf="s.name">
                                         <div class="d-flex align-items-center">
-                                            <img [src]="s.img" class="w-100px rounded-1 me-4" alt="" *ngIf="s.img">
+                                            <img [src]="s.img" class="schedule-speaker-img rounded-1 me-3" alt="" *ngIf="s.img">
                                             <div>
                                                 <h5 class="mb-0">{{ s.name }}</h5>
                                                 <span *ngIf="s.role">{{ s.role }}</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 col-sm-12">
                                         <h3>{{ s.title }}</h3>
                                         <p class="fs-15 mb-0">{{ s.desc }}</p>
                                     </div>

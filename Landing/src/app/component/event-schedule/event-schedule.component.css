@@ -17,3 +17,18 @@
 .d-tab-nav li h3 {
     margin-bottom: 0.5rem;
 }
+
+@media (max-width: 768px) {
+    .d-tab-nav li {
+        padding: 0.6rem 0.4rem;
+    }
+
+    .d-tab-nav li h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .d-tab-nav li {
+        font-size: 0.8rem;
+    }
+}

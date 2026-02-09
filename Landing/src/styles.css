@@ -134,6 +134,7 @@ a.btn-main.btn-line:hover,
         height: auto !important;
         overflow: visible !important;
         display: block !important;
+        padding: 14px 0 !important;
     }
 
     /* Override the framework's nav height:0 */
@@ -203,6 +204,13 @@ a.btn-main.btn-line:hover,
         z-index: 10000 !important;
         position: relative !important;
         cursor: pointer;
+        color: #fff !important;
+        background: none !important;
+    }
+
+    #menu-btn:hover {
+        color: var(--accent-color) !important;
+        background: none !important;
     }
 
     /* Body padding to account for fixed header */
@@ -215,7 +223,26 @@ a.btn-main.btn-line:hover,
    RESPONSIVE / MOBILE FIXES
    ======================================== */
 
-/* --- Mobile: max 992px --- */
+/* Venue icon size (responsive replacement for fs-60) */
+.venue-icon {
+    font-size: 48px;
+    min-width: 48px;
+}
+
+/* Schedule speaker image */
+.schedule-speaker-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Schedule time badge */
+.schedule-time {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* --- Tablet & mobile: max 992px --- */
 @media (max-width: 992px) {
     /* Hero section */
     #section-hero {
@@ -225,10 +252,12 @@ a.btn-main.btn-line:hover,
 
     #section-hero .abs-centered {
         width: 95% !important;
+        padding: 0 15px;
     }
 
     #section-hero h1 {
         font-size: 10vw !important;
+        line-height: 1.1 !important;
     }
 
     #section-hero .subtitle {
@@ -249,7 +278,7 @@ a.btn-main.btn-line:hover,
         margin: 0.4rem auto !important;
     }
 
-    /* Spacer reduce on mobile */
+    /* Spacer reduce */
     .spacer-single {
         height: 20px !important;
     }
@@ -258,57 +287,14 @@ a.btn-main.btn-line:hover,
         height: 30px !important;
     }
 
-    /* About section padding fix */
-    #section-about .py-5.my-5 {
-        padding-top: 1.5rem !important;
-        padding-bottom: 1.5rem !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+    /* Global headings - responsive sizing */
+    h2 {
+        font-size: 1.75rem !important;
+        word-wrap: break-word;
     }
 
-    /* Speakers - wider container for long title */
-    #section-speakers .col-lg-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    #section-speakers h2 {
-        font-size: 1.6rem;
-    }
-
-    /* Schedule tabs - wrap and scroll on mobile */
-    .d-tab-nav {
-        flex-wrap: nowrap !important;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        gap: 0.5rem;
-        padding-bottom: 1rem !important;
-    }
-
-    .d-tab-nav li {
-        flex: 0 0 auto;
-        min-width: 120px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .d-tab-nav li h3 {
-        font-size: 1rem;
-    }
-
-    /* Schedule content stack */
-    #section-schedule .border-white-bottom-op-2 .row {
-        flex-direction: column;
-    }
-
-    /* Event location images */
-    #section-venue .col-sm-6 {
-        margin-bottom: 0.5rem;
-    }
-
-    /* Marquee text size */
-    .de-marquee-list-2 .fs-60 {
-        font-size: 2rem !important;
+    h3 {
+        font-size: 1.25rem !important;
     }
 
     /* Section padding reduce */
@@ -328,12 +314,152 @@ a.btn-main.btn-line:hover,
     section.no-bottom {
         padding-bottom: 0 !important;
     }
+
+    /* ---- About section ---- */
+    #section-about .row {
+        gap: 0 !important;
+    }
+
+    #section-about .me-lg-5,
+    #section-about .pe-lg-5 {
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* ---- Speakers section ---- */
+    #section-speakers .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #section-speakers h2 {
+        font-size: 1.5rem !important;
+    }
+
+    #section-speakers .bg-blur {
+        padding: 0.75rem !important;
+        margin: 0.75rem !important;
+    }
+
+    #section-speakers .bg-blur h3 {
+        font-size: 1rem !important;
+    }
+
+    #section-speakers .bg-blur span {
+        font-size: 0.85rem;
+    }
+
+    /* ---- Schedule section ---- */
+    .d-tab-nav {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.5rem;
+        padding-bottom: 1rem !important;
+    }
+
+    .d-tab-nav li {
+        flex: 0 0 auto;
+        min-width: 110px;
+        text-align: center;
+        font-size: 13px;
+        padding: 0.75rem 0.5rem !important;
+    }
+
+    .d-tab-nav li h3 {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    /* Schedule content rows stack vertically */
+    #section-schedule .border-white-bottom-op-2 {
+        padding-bottom: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .schedule-speaker-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .schedule-time {
+        display: inline-block;
+        padding: 4px 12px;
+        background: rgba(151, 251, 5, 0.1);
+        border-radius: 6px;
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #section-schedule h3 {
+        font-size: 1.1rem !important;
+    }
+
+    /* ---- Venue section ---- */
+    .venue-icon {
+        font-size: 36px;
+        min-width: 36px;
+    }
+
+    #section-venue .d-flex {
+        align-items: center;
+    }
+
+    #section-venue h4 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem !important;
+    }
+
+    #section-venue p {
+        font-size: 0.9rem;
+        margin-bottom: 0 !important;
+    }
+
+    /* ---- Marquee section ---- */
+    .de-marquee-list-2 .fs-60 {
+        font-size: 1.75rem !important;
+    }
+
+    /* ---- FAQ section ---- */
+    #section-faq .accordion-section-title {
+        font-size: 0.95rem;
+        padding: 12px 15px !important;
+    }
+
+    #section-faq .accordion-section-content {
+        font-size: 0.9rem;
+        padding: 10px 15px !important;
+    }
+
+    /* ---- Footer ---- */
+    footer .fs-20 {
+        font-size: 1rem !important;
+    }
+
+    footer img[alt="MIME Digital"] {
+        height: 40px !important;
+    }
+
+    .subfooter {
+        font-size: 0.85rem;
+    }
+
+    /* Container padding on mobile */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* Reduce gx-5 gap on mobile */
+    .gx-5 {
+        --bs-gutter-x: 1rem !important;
+    }
 }
 
-/* --- Small mobile: max 480px --- */
-@media (max-width: 480px) {
+/* --- Small mobile: max 576px --- */
+@media (max-width: 576px) {
     #section-hero h1 {
-        font-size: 12vw !important;
+        font-size: 11vw !important;
     }
 
     #section-hero .subtitle {
@@ -344,25 +470,62 @@ a.btn-main.btn-line:hover,
         font-size: 0.9rem;
     }
 
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
     /* Feature cards single column */
     #section-why-attend .col-lg-4.col-md-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
-    /* FAQ title */
-    #section-faq h2 {
-        font-size: 1.4rem;
-    }
-
-    /* Organizer section */
+    /* Organizer section full width */
     #section-organizer .col-lg-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
+    /* Speakers grid - full width */
+    #section-speakers .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Venue details full width */
+    #section-venue .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .venue-icon {
+        font-size: 30px;
+        min-width: 30px;
+    }
+
+    /* Schedule speaker image smaller */
+    .schedule-speaker-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* FAQ */
+    #section-faq h2 {
+        font-size: 1.3rem !important;
+    }
+
     /* Footer social icons */
     footer .social-icons a {
         margin: 0 8px;
+    }
+
+    /* Marquee even smaller */
+    .de-marquee-list-2 .fs-60 {
+        font-size: 1.4rem !important;
+    }
+
+    .de-marquee-list-2 .mx-3 {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
     }
 }
