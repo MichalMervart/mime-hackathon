@@ -51,8 +51,8 @@ export class GlobalNetworkingComponent {
       icon: 'fa-solid fa-chalkboard-user'
     },
     {
-      title: 'Prezentace projektů',
-      desc: `Představte svůj projekt a získejte hodnocení od odborné poroty.`,
+      title: 'Prize pool 50 000 Kč',
+      desc: `Představte svůj projekt odborné porotě a bojujte o prize pool, ve kterém bude rozděleno celkem 50 000 Kč.`,
       icon: 'fa-solid fa-trophy'
     }
   ];

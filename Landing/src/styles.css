@@ -98,9 +98,28 @@ a.btn-main.btn-line:hover,
     color: var(--accent-color) !important;
 }
 
+/* Marquee strips - accent color */
+.bg-color {
+    background: var(--accent-color) !important;
+}
+
+/* Dark text on bright marquee */
+.bg-color .de-marquee-list-2 .fs-60 {
+    color: #111 !important;
+}
+
+.bg-color .de-marquee-list-2 .op-2 {
+    color: rgba(0, 0, 0, 0.3) !important;
+}
+
 /* ========================================
    MOBILE MENU OVERRIDES
    ======================================== */
+
+/* Mobile slide-in menu (outside header, own stacking context) */
+.mobile-slide-menu {
+    display: none;
+}
 
 /* Overlay behind mobile menu */
 .mobile-menu-overlay {
@@ -111,7 +130,7 @@ a.btn-main.btn-line:hover,
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 9998;
+    z-index: 99998;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -122,7 +141,7 @@ a.btn-main.btn-line:hover,
 }
 
 @media (max-width: 992px) {
-    /* Keep header fixed at top, NOT the framework's position:inherit */
+    /* Keep header fixed at top */
     header,
     header.fixed,
     header.transparent {
@@ -137,71 +156,88 @@ a.btn-main.btn-line:hover,
         padding: 14px 0 !important;
     }
 
-    /* Override the framework's nav height:0 */
-    nav {
-        height: auto !important;
+    /* Hide desktop menu on mobile */
+    #mainmenu {
+        display: none !important;
     }
 
-    /* Slide-in panel - override all framework #mainmenu mobile styles */
-    #mainmenu {
+    /* Show the separate mobile slide-in menu */
+    .mobile-slide-menu {
+        display: block;
         position: fixed !important;
         top: 0 !important;
-        right: -280px !important;
-        left: auto !important;
+        right: -280px;
         width: 280px !important;
         height: 100vh !important;
         background: #111 !important;
-        z-index: 9999 !important;
+        z-index: 99999 !important;
         padding: 80px 0 30px !important;
         margin: 0 !important;
         overflow-y: auto !important;
         transition: right 0.3s ease !important;
-        display: flex !important;
-        flex-direction: column !important;
-        visibility: visible !important;
-        opacity: 1 !important;
     }
 
-    #mainmenu.mobile-open {
+    .mobile-slide-menu.mobile-open {
         right: 0 !important;
     }
 
-    #mainmenu li {
+    /* Close button inside mobile menu */
+    .mobile-menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 24px;
+        cursor: pointer;
+        padding: 8px;
+        line-height: 1;
+        z-index: 1;
+        transition: color 0.2s ease;
+    }
+
+    .mobile-menu-close:hover {
+        color: var(--accent-color);
+    }
+
+    .mobile-slide-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-slide-menu li {
         display: block !important;
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-        float: none !important;
     }
 
-    #mainmenu li a,
-    #mainmenu li a.menu-item {
+    .mobile-slide-menu li a {
         display: block !important;
         padding: 14px 24px !important;
         font-size: 15px !important;
         color: rgba(255, 255, 255, 0.8) !important;
         background: transparent !important;
         text-align: left !important;
+        text-decoration: none;
+        transition: all 0.2s ease;
     }
 
-    #mainmenu li a:hover,
-    #mainmenu li a.active,
-    #mainmenu li a.menu-item:hover,
-    #mainmenu li a.menu-item.active {
+    .mobile-slide-menu li a:hover,
+    .mobile-slide-menu li a.active {
         color: var(--accent-color) !important;
         background: rgba(151, 251, 5, 0.05) !important;
-    }
-
-    /* Hide the underline decoration on mobile */
-    #mainmenu li a:before {
-        display: none !important;
     }
 
     /* Show hamburger button */
     #menu-btn {
         display: block !important;
-        z-index: 10000 !important;
+        z-index: 100000 !important;
         position: relative !important;
         cursor: pointer;
         color: #fff !important;

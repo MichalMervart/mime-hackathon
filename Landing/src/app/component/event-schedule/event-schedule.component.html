@@ -1,4 +1,4 @@
-<section id="section-schedule" class="bg-dark section-dark text-light">
+<section id="section-schedule" class="bg-dark section-dark text-light" aria-label="Program akce">
     <div class="container">
         <div class="row g-4 gx-5 justify-content-center">
             <div class="col-lg-6 text-center">
@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="col-md-4 col-sm-12" *ngIf="s.name">
                                         <div class="d-flex align-items-center">
-                                            <img [src]="s.img" class="schedule-speaker-img rounded-1 me-3" alt="" *ngIf="s.img">
+                                            <img [src]="s.img" class="schedule-speaker-img rounded-1 me-3" [alt]="s.name || 'Řečník'" *ngIf="s.img">
                                             <div>
                                                 <h5 class="mb-0">{{ s.name }}</h5>
                                                 <span *ngIf="s.role">{{ s.role }}</span>

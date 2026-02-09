@@ -3,6 +3,21 @@
   command = "npm install && npx ng build --configuration production"
   publish = "dist/aivent/browser"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

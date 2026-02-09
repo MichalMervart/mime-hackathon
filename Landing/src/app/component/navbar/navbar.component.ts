@@ -13,7 +13,10 @@ export class NavbarComponent {
   activeSection: string = 'section-hero';
   isMobileMenuOpen: boolean = false;
 
-  scrollToSection(sectionId: string) {
+  scrollToSection(sectionId: string, event?: Event) {
+    if (event) {
+      event.preventDefault();
+    }
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });

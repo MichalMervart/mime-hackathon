@@ -1,4 +1,4 @@
-<header [ngClass]="headerClass">
+<header [ngClass]="headerClass" role="banner">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -6,10 +6,10 @@
                     <div class="de-flex-col">
                         <!-- logo begin -->
                         <div id="logo">
-                            <a routerLink="/">
-                                <img class="logo-main" src="assets/images/img/mime-logo.svg" alt="MIME Digital">
-                                <img class="logo-scroll" src="assets/images/img/mime-logo.svg" alt="MIME Digital">
-                                <img class="logo-mobile" src="assets/images/img/mime-logo.svg" alt="MIME Digital">
+                            <a routerLink="/" aria-label="MIME Digital – domovská stránka">
+                                <img class="logo-main" src="assets/images/img/mime-logo.svg" alt="MIME Digital – logo">
+                                <img class="logo-scroll" src="assets/images/img/mime-logo.svg" alt="MIME Digital – logo">
+                                <img class="logo-mobile" src="assets/images/img/mime-logo.svg" alt="MIME Digital – logo">
                             </a>
                         </div>
                         <!-- logo close -->
@@ -17,57 +17,57 @@
 
                     <div class="de-flex-col">
                         <div class="de-flex-col header-col-mid">
-                            <ul id="mainmenu" [class.mobile-open]="isMobileMenuOpen">
-                                <li>
-                                    <a class="menu-item" [class.active]="activeSection === 'section-hero'"
-                                        (click)="scrollToSection('section-hero')" href="javascript:void(0)">
+                            <!-- Desktop menu stays inside header for layout -->
+                            <ul id="mainmenu" role="menubar">
+                                <li role="none">
+                                    <a class="menu-item" role="menuitem" [class.active]="activeSection === 'section-hero'"
+                                        (click)="scrollToSection('section-hero', $event)" href="#section-hero">
                                         Home
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="menu-item" [class.active]="activeSection === 'section-about'"
-                                        (click)="scrollToSection('section-about')" href="javascript:void(0)">
+                                <li role="none">
+                                    <a class="menu-item" role="menuitem" [class.active]="activeSection === 'section-about'"
+                                        (click)="scrollToSection('section-about', $event)" href="#section-about">
                                         O akci
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="menu-item" [class.active]="activeSection === 'section-why-attend'"
-                                        (click)="scrollToSection('section-why-attend')" href="javascript:void(0)">
+                                <li role="none">
+                                    <a class="menu-item" role="menuitem" [class.active]="activeSection === 'section-why-attend'"
+                                        (click)="scrollToSection('section-why-attend', $event)" href="#section-why-attend">
                                         Proč se zúčastnit
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="menu-item" [class.active]="activeSection === 'section-speakers'"
-                                        (click)="scrollToSection('section-speakers')" href="javascript:void(0)">
+                                <li role="none">
+                                    <a class="menu-item" role="menuitem" [class.active]="activeSection === 'section-speakers'"
+                                        (click)="scrollToSection('section-speakers', $event)" href="#section-speakers">
                                         Řečníci
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="menu-item" [class.active]="activeSection === 'section-schedule'"
-                                        (click)="scrollToSection('section-schedule')" href="javascript:void(0)">
+                                <li role="none">
+                                    <a class="menu-item" role="menuitem" [class.active]="activeSection === 'section-schedule'"
+                                        (click)="scrollToSection('section-schedule', $event)" href="#section-schedule">
                                         Program
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="menu-item" [class.active]="activeSection === 'section-venue'"
-                                        (click)="scrollToSection('section-venue')" href="javascript:void(0)">
+                                <li role="none">
+                                    <a class="menu-item" role="menuitem" [class.active]="activeSection === 'section-venue'"
+                                        (click)="scrollToSection('section-venue', $event)" href="#section-venue">
                                         Místo konání
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="menu-item" [class.active]="activeSection === 'section-faq'"
-                                        (click)="scrollToSection('section-faq')" href="javascript:void(0)">
+                                <li role="none">
+                                    <a class="menu-item" role="menuitem" [class.active]="activeSection === 'section-faq'"
+                                        (click)="scrollToSection('section-faq', $event)" href="#section-faq">
                                         FAQ
                                     </a>
                                 </li>
                             </ul>
-
                         </div>
                     </div>
 
                     <div class="de-flex-col">
                         <div class="menu_side_area">
-                            <span id="menu-btn" [class.menu-open]="isMobileMenuOpen" (click)="toggleMobileMenu()"></span>
+                            <span id="menu-btn" role="button" aria-label="Otevřít menu" [attr.aria-expanded]="isMobileMenuOpen" [class.menu-open]="isMobileMenuOpen" (click)="toggleMobileMenu()"></span>
                         </div>
                     </div>
                 </div>
@@ -76,5 +76,42 @@
     </div>
 </header>
 
-<!-- Mobile menu overlay -->
-<div class="mobile-menu-overlay" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
+<!-- Mobile menu overlay - OUTSIDE header to avoid stacking context -->
+<div class="mobile-menu-overlay" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()" aria-hidden="true"></div>
+
+<!-- Mobile slide-in menu - OUTSIDE header to escape z-index stacking context -->
+<nav id="mobile-nav" class="mobile-slide-menu" [class.mobile-open]="isMobileMenuOpen" aria-label="Mobilní navigace">
+    <button class="mobile-menu-close" (click)="closeMobileMenu()" aria-label="Zavřít menu">
+        <i class="fa fa-times"></i>
+    </button>
+    <ul role="menubar">
+        <li role="none">
+            <a role="menuitem" [class.active]="activeSection === 'section-hero'"
+                (click)="scrollToSection('section-hero', $event)" href="#section-hero">Home</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" [class.active]="activeSection === 'section-about'"
+                (click)="scrollToSection('section-about', $event)" href="#section-about">O akci</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" [class.active]="activeSection === 'section-why-attend'"
+                (click)="scrollToSection('section-why-attend', $event)" href="#section-why-attend">Proč se zúčastnit</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" [class.active]="activeSection === 'section-speakers'"
+                (click)="scrollToSection('section-speakers', $event)" href="#section-speakers">Řečníci</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" [class.active]="activeSection === 'section-schedule'"
+                (click)="scrollToSection('section-schedule', $event)" href="#section-schedule">Program</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" [class.active]="activeSection === 'section-venue'"
+                (click)="scrollToSection('section-venue', $event)" href="#section-venue">Místo konání</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" [class.active]="activeSection === 'section-faq'"
+                (click)="scrollToSection('section-faq', $event)" href="#section-faq">FAQ</a>
+        </li>
+    </ul>
+</nav>
