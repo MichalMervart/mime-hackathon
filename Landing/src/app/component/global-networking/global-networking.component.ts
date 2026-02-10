@@ -52,7 +52,7 @@ export class GlobalNetworkingComponent {
     },
     {
       title: 'Prize pool 50 000 Kč',
-      desc: `Představte svůj projekt odborné porotě a bojujte o prize pool, ve kterém bude rozděleno celkem 50 000 Kč.`,
+      desc: `V sázce je celkem 50 000 Kč. Jak přesně bude prize pool rozdělen? To se dozvíte až na místě.`,
       icon: 'fa-solid fa-trophy'
     }
   ];

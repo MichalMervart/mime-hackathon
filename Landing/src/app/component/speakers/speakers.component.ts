@@ -10,9 +10,9 @@ import { Component } from '@angular/core';
 export class SpeakersComponent {
   speakers = [
     {
-      name: 'Bude upřesněno',
-      title: 'Název pozice',
-      image: 'assets/images/img/bude-doplneno.png'
+      name: 'David Abraham',
+      title: 'CMO Grizly | Co-founder nebe',
+      image: 'assets/images/img/david-abraham.png'
     },
     {
       name: 'Bude upřesněno',

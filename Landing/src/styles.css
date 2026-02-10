@@ -10,6 +10,34 @@
     color: rgba(255, 255, 255, .75);
 }
 
+/* Hero H1 - fit on single line on desktop */
+#section-hero .abs-centered {
+    width: 95% !important;
+}
+
+#section-hero .container {
+    max-width: 100% !important;
+}
+
+#section-hero h1.fs-120 {
+    font-size: 5.8vw !important;
+    white-space: nowrap;
+}
+
+/* Hero prize pool sub-heading */
+.hero-prize {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.hero-prize strong {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
 /* === Accent color #97FB05 overrides === */
 
 /* Subtitle brackets [ ] */
@@ -73,6 +101,13 @@ a.btn-main.btn-line:hover,
     color: #111 !important;
     border-color: var(--accent-color) !important;
     box-shadow: 0 0 25px rgba(var(--accent-color-rgb), 0.35);
+}
+
+/* Large CTA button */
+.btn-cta-large {
+    font-size: 1.1rem !important;
+    padding: 14px 40px !important;
+    letter-spacing: 1px;
 }
 
 /* Icon color accents - calendar & location in hero */
@@ -259,6 +294,13 @@ a.btn-main.btn-line:hover,
    RESPONSIVE / MOBILE FIXES
    ======================================== */
 
+/* Venue photos - equal height */
+.venue-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
 /* Venue icon size (responsive replacement for fs-60) */
 .venue-icon {
     font-size: 48px;
@@ -294,6 +336,7 @@ a.btn-main.btn-line:hover,
     #section-hero h1 {
         font-size: 10vw !important;
         line-height: 1.1 !important;
+        white-space: normal !important;
     }
 
     #section-hero .subtitle {
