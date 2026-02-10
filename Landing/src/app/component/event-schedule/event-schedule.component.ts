@@ -48,7 +48,7 @@ export class EventScheduleComponent {
           name: 'Hlavní organizátor',
           role: '',
           title: 'Úvodní keynote',
-          desc: 'Představení tématu "E(R)voluce v e-commerce", cílů hackathonu a inspirace pro účastníky.'
+          desc: 'Představení tématu "(R)evoluce v e-commerce", cílů hackathonu a inspirace pro účastníky.'
         },
         {
           time: '17:00',

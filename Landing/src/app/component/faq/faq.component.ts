@@ -27,8 +27,8 @@ export class FaqComponent {
 
   accordionItems = [
     {
-      title: 'Co je E(R)voluce v e-commerce?',
-      content: 'E(R)voluce v e-commerce je hackathon zaměřený na tvorbu inovativních řešení v oblasti e-commerce. Za tři dny vytvoříte funkční MVP produktu s pomocí mentorů a týmu.'
+      title: 'Co je (R)evoluce v e-commerce?',
+      content: '(R)evoluce v e-commerce je hackathon zaměřený na tvorbu inovativních řešení v oblasti e-commerce. Za tři dny vytvoříte funkční MVP produktu s pomocí mentorů a týmu.'
     },
     {
       title: 'Kdy a kde se hackathon koná?',
