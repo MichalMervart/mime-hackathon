@@ -27,8 +27,8 @@ export class FaqComponent {
 
   accordionItems = [
     {
-      title: 'Co je E-mailová evoluce?',
-      content: 'E-mailová evoluce je hackathon zaměřený na tvorbu inovativních řešení v oblasti e-mailové komunikace. Za tři dny vytvoříte funkční MVP produktu s pomocí mentorů a týmu.'
+      title: 'Co je E(R)voluce v e-commerce?',
+      content: 'E(R)voluce v e-commerce je hackathon zaměřený na tvorbu inovativních řešení v oblasti e-commerce. Za tři dny vytvoříte funkční MVP produktu s pomocí mentorů a týmu.'
     },
     {
       title: 'Kdy a kde se hackathon koná?',
